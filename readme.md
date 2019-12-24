@@ -203,9 +203,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 # 6 Testing
 
-
-## 6.1 Test the Auth Service
-
+test
 
 > You'll need a set of valid Maxymiser Credentials to for a Maxymiser app to use this (i.e. Username, Password, Site ID, Client ID and client Secret)
 
