@@ -198,7 +198,7 @@ Nano into your file and edit the config:
 
 > Change **MM_VISITOR_API** to your Maxymiser Customer Data API domain, e.g. https://api-data-eu.maxymiser.com
 
-> Change "LOG_SERVER_STATUS" and "LOG_ENDPOINT" as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+> Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
 
 
 Now, turn the Docker Service to get the Auth Service up and running:
