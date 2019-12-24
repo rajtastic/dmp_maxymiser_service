@@ -69,12 +69,25 @@ Primary limitations/concerns are:
 
 You'll need to deploy the Auth Service and then the Visitor Service (because the Visitor Service needs the IP/domain of the Auth Service).
 
-## 5.1 Set up Two Servers with the required services on each one
+## 5.1 Set up two Servers with Public IPs
 
 
-> This guide assumes you are deploying to Ubuntu 18.04 servers and you have opened up all the required ports (i.e. ports 80, 443 and 27017).
+> This guide sets up servers using Ubuntu 18.04 images but feel free to use whatever you want
 
-Firstly, set up two servers and set up the following services on each:
+Ensure you open ports 80 and 443:
+
+> This guide just opens up port 80 for this POC - you should ensure 443 is open too (assuming you run this on a secure server)
+
+```console
+sudo iptables -I INPUT -p tcp -s 0.0.0.0/0 --dport 80 -j ACCEPT
+sudo service netfilter-persistent start 
+sudo netfilter-persistent save
+```
+
+
+## 5.2 Set up the required services on each server
+
+Firstly, set up two servers and set up the following services on each.
 
 Install Docker:
 
@@ -100,7 +113,7 @@ sudo apt install nano
 
 ```
 
-## 5.2 Install Auth Service
+## 5.3 Install Auth Service
 On your Auth Service Server, you can now install the Auth Service.
 
 Download the Docker Container/Service:
@@ -147,7 +160,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 ![Auth Service Health Check](https://www.evernote.com/shard/s142/sh/679dce3a-0500-47e1-87be-f1ece695812b/ab77a26cd9dc69e9/res/feaf30a7-6bdf-4f57-8176-8105dee0b4d9/skitch.png)
 
-## 5.3 Install Visitor Service
+## 5.4 Install Visitor Service
 
 Download the Docker Container/Service:
 ```console
