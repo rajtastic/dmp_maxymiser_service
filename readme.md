@@ -306,8 +306,11 @@ POST
 }
 ```
 > Replace <RANDOM_MAXYMISER_CUSTOMER_ID_HERE> with anything here, e.g. "12345"
+
 > Replace <YOUR_MAXYMISER_SITE_ID> with valid site ID from previous Auth Service test, e.g. "Xyz134"
+
 > Replace <ATTRIBUTE_NAME> with a Maxymiser Attribute Name, e.g. "customer_type" - it doesn't matter
+
 > Replace <ATTRIBUTE_VALUE> with a Maxymiser Attribute Value, e.g. "vip_customer" - it doesn't matter
 
 When you push data to the DMP > Maxymiser Service endpoint, it will then fire data to the Maxymiser API. For example:
