@@ -5,7 +5,7 @@ const mmSiteIdModel = require("./mmSiteId.model");
 const Logger = require('./Logger');
 const ServerLogger = require('./ServerLogger');
 const request = require('request-promise');
-//require('request-debug')(request);
+require('request-debug')(request);
 
 const Auth = {};
 

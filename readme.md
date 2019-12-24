@@ -209,3 +209,49 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 Go to your Auth Server IP/domain "auth" endpoint (e.g. <mydomain>/auth>):
 
+![Auth Service](https://www.evernote.com/shard/s142/sh/b6ba4f83-94d6-4871-b21a-5bc049e7eeea/8d0f399a32a459b7/res/3cfd2e78-11f1-41d0-a825-6e2b4b0363e1/skitch.png)
+
+Enter some valid credentials and check for a successful message:
+
+![Auth Service Success](https://www.evernote.com/shard/s142/sh/0d88eb9b-5e58-4704-a4b9-8739616b8327/121ece244fccaa3d/res/35e916b3-5e6c-4cbe-95cc-04aea4a5f58b/skitch.png)
+
+Optionally, you can check the console or your logging server for issues.
+
+Console:
+![Console Log](https://www.evernote.com/shard/s142/sh/1d32512d-fd69-4332-9b3d-0dbae374350d/dd9f5139c984c4d9/res/27dedc62-0d00-4fe6-b8fe-95e571340f61/skitch.png)
+
+Server Logs:
+
+```Javascript
+{
+  status: 'FAIL',
+  message: "Maxymiser Call has failed - see 'error'",
+  error: {
+    name: 'StatusCodeError',
+    statusCode: 400,
+    message: '400 - {"error":"invalid_header","error_description":"Failed to validate client secret."}',
+    error: {
+      error: 'invalid_header',
+      error_description: 'Failed to validate client secret.'
+    },
+    options: {
+      method: 'POST',
+      uri: 'https://api-auth-eu.maxymiser.com/oauth2/v1/tokens',
+      json: true,
+      form: [Object],
+      headers: [Object],
+      simple: true,
+      resolveWithFullResponse: false,
+      transform2xxOnly: false
+    },
+    response: {
+      statusCode: 400,
+      body: [Object],
+      headers: [Object],
+      request: [Object]
+    }
+  },
+  serviceName: 'Auth Service'
+}
+```
+

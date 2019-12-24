@@ -9,7 +9,7 @@ const mmSiteIdSchema = new mongoose.Schema({
 		token: {type: String},
 		expires: {type: Number},
 		expires_date:{type:String},
-		client_id: {type: String},
+		client_id: {type:  String},
 		client_base64string: {type: String}
 	}
 });
