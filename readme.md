@@ -162,6 +162,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 ![Auth Service Health Check](https://www.evernote.com/shard/s142/sh/679dce3a-0500-47e1-87be-f1ece695812b/ab77a26cd9dc69e9/res/feaf30a7-6bdf-4f57-8176-8105dee0b4d9/skitch.png)
 
 ## 5.4 Install Visitor Service
+Go to your Visitor Service server and being installing the Visitor Service:
 
 Download the Docker Container/Service:
 ```console
