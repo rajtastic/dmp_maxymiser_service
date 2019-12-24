@@ -71,6 +71,8 @@ You'll need to deploy the Auth Service and then the Visitor Service (because the
 
 ## 5.1 Set up two servers with public IPs
 
+> This guide sets up servers using Ubuntu 18.04 images but feel free to use whatever you want
+
 Ensure you open ports 80 and 443:
 
 > This guide just opens up port 80 for this POC - you should ensure 443 is open too (assuming you run this on a secure server)
