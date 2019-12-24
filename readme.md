@@ -39,7 +39,7 @@ Both services can be specified to log requests/results to your own server (provi
 }
 ```
 
-# Limitations / Concerns
+# 4 Limitations / Concerns
 Primary limitations/concerns are:
 
 * **Not set up https** (the service should be updated to run on https)
@@ -52,11 +52,11 @@ Primary limitations/concerns are:
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
 
-# Deployment Instructions
+# 5 Deployment Instructions
 
 You'll need to deploy the Auth Service and then the Visitor Service (because the Visitor Service needs the IP/domain of the Auth Service).
 
-## Set up Two Servers with the required services on each one
+## 5.1 Set up Two Servers with the required services on each one
 
 > This guide assumes you are deploying to Ubuntu 18.04 servers and you have opened up all the required ports (i.e. ports 80, 443 and 27017).
 
@@ -86,7 +86,7 @@ sudo apt install nano
 
 ```
 
-## Install Auth Service
+## 5.2 Install Auth Service
 On your Auth Service Server, you can now install the Auth Service:
 
 Download the docker-compose.yaml file:
@@ -107,7 +107,7 @@ sudo curl https://raw.githubusercontent.com/rajtastic/dmp_maxymiser_service/mast
 
 Nano into your file and edit the config:
 
-![docker-prod.env file](hhttps://www.evernote.com/shard/s142/sh/c9f35e7d-0dcb-4b8c-b7bb-dadcb0478f7d/8903d48c9f61743e/res/cc74a2e0-2c22-401f-aa43-ff1dbccc513e/skitch.png)
+![docker-prod.env file](https://www.evernote.com/shard/s142/sh/c9f35e7d-0dcb-4b8c-b7bb-dadcb0478f7d/8903d48c9f61743e/res/cc74a2e0-2c22-401f-aa43-ff1dbccc513e/skitch.png)
 
 Change the endpoints as per the screenshot.
 
