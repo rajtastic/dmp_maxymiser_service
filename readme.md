@@ -146,9 +146,11 @@ Nano into your file and edit the config:
 
 Change the endpoints as per the screenshot:
 
-> Leave "DB_DOMAIN" as default
+> Leave **DB_DOMAIN** as default
 
-> Change "LOG_SERVER_STATUS" and "LOG_ENDPOINT" as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+> Change **MM_AUTH_ENDPOINT** to your Maxymiser token enpdoint (e.g. https://api-auth-env.maxymiser.com/oauth2/v1/tokens)
+
+> Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
 
 Now, turn the Docker Service to get the Auth Service up and running:
 
@@ -191,7 +193,12 @@ Nano into your file and edit the config:
 
 ![docker-prod.env](https://www.evernote.com/shard/s142/sh/5103d7f6-76d1-4376-9be3-ae5aa590f481/16aa362087688585/res/67a85fd7-2775-4535-a18e-aff8817adddf/skitch.png)
 
-Change the endpoints as per the screenshot above.
+> Change **AUTH_SERVICE_DOMAIN** to your Auth Service URL, e.g. https://myauth.com>
+
+> Change **MM_VISITOR_API** to your Maxymiser Customer Data API domain, e.g. https://api-data-eu.maxymiser.com
+
+> Change "LOG_SERVER_STATUS" and "LOG_ENDPOINT" as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+
 
 Now, turn the Docker Service to get the Auth Service up and running:
 
