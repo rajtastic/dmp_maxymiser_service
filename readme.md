@@ -352,6 +352,7 @@ PUT
  }
 }
 ```
+### 6.2.1 Checking the Service for successes/failures
 
 If you have logging set up, you can check these requests and the response from Maxymiser on your Logging Server. For example:
 
