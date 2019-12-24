@@ -201,7 +201,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 ![Visitor Service Health Check](https://www.evernote.com/shard/s142/sh/9669b6a0-2bfc-404a-9fb5-163e80cf3f3d/066fc566bbf4c6db/res/2e287414-e7dc-4314-8063-a5aee6021b69/skitch.png)
 
-#6 Testing
+# 6 Testing
 
 ## 6.1 Test the Auth Service
 
