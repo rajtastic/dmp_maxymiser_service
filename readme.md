@@ -43,7 +43,64 @@ Primary limitations/concerns are:
 		* Have some form of disaster recovery/fail-over
 
 # Deployment Instructions
+
+You'll need to deploy the Auth Service and then the Visitor Service (because the Visitor Service needs the IP/domain of the Auth Service).
+
+## Set up Two Servers with the required services on each one
+> This guide assumes you are deploying to Ubuntu 18.04 servers and you have opened up all the required ports (i.e. ports 80, 443 and 27017).
+
+Firstly, set up two servers and set up the following services on each:
+
+Install Docker:
+
 ```console
-sudo apt-update test
+sudo apt update
+sudo apt-get remove docker docker-engine docker.io
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+
 ```
+Install Docker-Compose:
+
+```console
+sudo curl -L https://github.com/docker/compose/releases/download/1.17.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+```
+Install Nano:
+
+```console
+sudo apt install nano
+
+```
+
+## Install Auth Service
+On your Auth Service Server, you can now install the Auth Service:
+
+Download the docker-compose.yaml file:
+
+```console
+sudo curl https://raw.githubusercontent.com/rajtastic/dmp_maxymiser_service/master/dmp_mm_auth_service/docker-compose.yaml --output docker-compose.yaml
+
+```
+
+Create an "env" folder and download the **docker-prod.env** file (you will configure your server using the docker env files here):
+
+```console
+sudo mkdir env
+cd env
+sudo curl https://raw.githubusercontent.com/rajtastic/dmp_maxymiser_service/master/dmp_mm_auth_service/env/docker-prod.env --output docker-prod.env
+
+```
+
+Nano into your file and edit the config:
+
+![docker-prod.env file](hhttps://www.evernote.com/shard/s142/sh/c9f35e7d-0dcb-4b8c-b7bb-dadcb0478f7d/8903d48c9f61743e/res/cc74a2e0-2c22-401f-aa43-ff1dbccc513e/skitch.png)
+
+Change the endpoints as per the screenshot.
+
+> Note : If you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+
+
 
