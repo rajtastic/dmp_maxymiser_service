@@ -219,6 +219,7 @@ Enter some valid credentials and check for a successful message:
 Optionally, you can check the console or your logging server for issues.
 
 > Console
+
 ![Console Log](https://www.evernote.com/shard/s142/sh/1d32512d-fd69-4332-9b3d-0dbae374350d/dd9f5139c984c4d9/res/27dedc62-0d00-4fe6-b8fe-95e571340f61/skitch.png)
 
 > Server Logs
