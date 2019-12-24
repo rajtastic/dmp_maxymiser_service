@@ -74,6 +74,8 @@ You'll need to deploy the Auth Service and then the Visitor Service (because the
 
 > This guide sets up servers using Ubuntu 18.04 images but feel free to use whatever you want
 
+> In production, I assume you'll have a load balancer per service and then run auto-scaling servers behind them to scale the Auth Service/Visitor Service as required
+
 Ensure you open port 80 to allow requests to your servers:
 
 > This guide just opens up port 80 for this POC - you should ensure 443 is open too (assuming you run this on a secure server)
