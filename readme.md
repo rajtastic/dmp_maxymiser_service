@@ -73,7 +73,7 @@ You'll need to deploy the Auth Service and then the Visitor Service (because the
 
 > This guide sets up servers using Ubuntu 18.04 images but feel free to use whatever you want
 
-Ensure you open ports 80 and 443:
+Ensure you open port 80 to allow requests to your servers:
 
 > This guide just opens up port 80 for this POC - you should ensure 443 is open too (assuming you run this on a secure server)
 
@@ -200,3 +200,12 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 <Your Server IP/Domain>/health
 
 ![Visitor Service Health Check](https://www.evernote.com/shard/s142/sh/9669b6a0-2bfc-404a-9fb5-163e80cf3f3d/066fc566bbf4c6db/res/2e287414-e7dc-4314-8063-a5aee6021b69/skitch.png)
+
+#6 Testing
+
+## 6.1 Test the Auth Service
+
+> You'll need a set of valid Maxymiser Credentials to for a Maxymiser app to use this (i.e. Username, Password, Site ID, Client ID and client Secret)
+
+Go to your Auth Server IP/domain "auth" endpoint (e.g. <mydomain>/auth>):
+

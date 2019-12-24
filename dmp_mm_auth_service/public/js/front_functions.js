@@ -95,7 +95,7 @@ window.auth_submit = function () {
 
         // Success        
         auth_clear();
-        alertify.notify(response.message + "\n" + "site ID=" + response.site_id, 'success', 3);
+        alertify.notify(response.message + "\n" + "site ID=" + response.mmSiteId, 'success', 3);
 
     }).fail(function (err) {
 
