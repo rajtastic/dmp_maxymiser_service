@@ -111,7 +111,8 @@ Nano into your file and edit the config:
 
 Change the endpoints as per the screenshot.
 
-> Note : If you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+> Leave "DB_DOMAIN" as default
+> Change "LOG_SERVER_STATUS" and "LOG_ENDPOINT" as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
 
 
 
