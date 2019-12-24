@@ -219,7 +219,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 > You'll need a set of valid Maxymiser Credentials to for a Maxymiser app to use this (i.e. Username, Password, Site ID, Client ID and client Secret)
 
-Go to your Auth Server IP/domain "auth" endpoint (e.g. <mydomain>/auth>):
+Go to your Auth Server IP/domain "auth" endpoint (e.g. www.mydomain.com/auth):
 
 ![Auth Service](https://www.evernote.com/shard/s142/sh/b6ba4f83-94d6-4871-b21a-5bc049e7eeea/8d0f399a32a459b7/res/3cfd2e78-11f1-41d0-a825-6e2b4b0363e1/skitch.png)
 
