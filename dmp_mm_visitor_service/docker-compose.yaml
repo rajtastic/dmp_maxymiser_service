@@ -1,0 +1,8 @@
+version: "2"
+services:
+  web:
+    image: rajtastic/dmp_mm_visitor_service
+    env_file:
+    - ./env/docker-prod.env
+    ports:
+    - "80:8080"

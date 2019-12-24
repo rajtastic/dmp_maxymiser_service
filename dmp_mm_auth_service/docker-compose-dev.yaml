@@ -1,0 +1,15 @@
+version: "2"
+services:
+  web:
+    build: .
+    ports:
+    - "8081:8081"
+    - "80:8081"
+    env_file:
+    - ./env/docker-dev.env
+    depends_on:
+    - mongo
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"

@@ -1,0 +1,40 @@
+html  
+    head
+        title #{title}
+        script(src='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/alertify.min.js')
+        script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
+        script(src='/js/front_functions.js')
+        
+        link(href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet')
+        link(href='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/alertify.min.css' rel='stylesheet')
+        link(href='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/themes/bootstrap.min.css' rel='stylesheet')
+    body
+
+        block content
+            .main.container
+                .row
+                    .col-md-8.col-offset-1
+                        h1.display-8.m-8 #{title}
+                        p Please enter your Maxymiser Credentials below to set up the integration:
+                                                        
+                        div.form-group
+                            label(for='mmSiteId') Maxymiser Site ID:
+                            input#mmSiteId.form-control(type='text' placeholder='Enter your Site ID' name='mmSiteId')                            
+                        div.form-group
+                            label(for='username') Username:
+                            input#username.form-control(type='text' placeholder='Enter Username' name='username')
+                        div.form-group
+                            label(for='pw') Password:
+                            input#pw.form-control(type='password' name='password' placeholder='Enter Password')
+                        div.form-group
+                            label(for='pw2') Confirm Password:
+                            input#pw2.form-control(type='password' name='confirmPassword' placeholder='Confirm Password')                        
+                        div.form-group
+                            label(for='client_id') Client ID:
+                            input#client_id.form-control(type='text' name='client_id' placeholder='Enter Client ID')
+                        div.form-group
+                            label(for='client_secret') Client Secret:
+                            input#client_secret.form-control(type='text' name='client_secret' placeholder='Enter Client Secret')
+                        button.btn.btn-primary(onclick='auth_submit()') Add/Update Credentials
+                        | 
+                        button.btn.btn-danger(onclick='auth_delete()') Delete Credentials

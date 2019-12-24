@@ -1,0 +1,19 @@
+{
+  "name": "dmp_mm_visitor_service",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js env=dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0",
+    "request-debug": "^0.2.0",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {},
+  "description": ""
+}

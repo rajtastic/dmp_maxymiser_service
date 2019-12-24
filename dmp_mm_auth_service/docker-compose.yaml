@@ -1,0 +1,14 @@
+version: "2"
+services:
+  web:
+    image: rajtastic/dmp_mm_auth_service
+    ports:
+    - "80:8081"
+    env_file:
+    - ./env/docker-prod.env
+    depends_on:
+    - mongo
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"

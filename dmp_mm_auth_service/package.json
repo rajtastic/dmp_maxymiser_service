@@ -1,0 +1,23 @@
+{
+  "name": "dmp_mm_auth_service",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ip": "^1.1.5",
+    "mongoose": "^5.7.11",
+    "pug": "^2.0.4",
+    "request": "^2.88.0",
+    "request-debug": "^0.2.0",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js env=dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
