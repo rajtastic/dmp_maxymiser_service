@@ -203,6 +203,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 # 6 Testing
 
+
 ## 6.1 Test the Auth Service
 
 
