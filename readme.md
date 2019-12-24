@@ -1,4 +1,9 @@
-# 1 Introduction
+# Table of Contents
+
+[1 Introduction](#1-introduction)
+[2 Repo Contents Description](#2-repo-contents-description)
+
+# 1 Introduction 
 
 This repo contains two Docker Images and required config files for the Oracle DMP > Maxymiser Service Proof-Of-Concept. This is a service designed to receive data from the Oracle DMP (via real-time [Server Data Transfer](https://docs.oracle.com/en/cloud/saas/data-cloud/data-cloud-help-center/#IntegratingBlueKaiPlatform/DataDelivery/intro_to_sdt.html)) and forward it to the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html) as end-user controlled Custom Attributes.
 
@@ -6,7 +11,8 @@ Optimising returning visitors' landing pages are a key opportunity for conversio
 
 As this integration would be server-side, as long as there is a match key between the DMP & Maxymiser (i.e. returning visitors only), by the time a user returns to the website Maxymiser will already have received the DMP data (making the landing page ready for optimsation).
 
-# 2 Contents Description
+[Introduction](#repo-contents-description)
+# 2 Repo Contents Description
 This repo contains two services which both run on Docker:
 
 ## 2.1 Auth Service
