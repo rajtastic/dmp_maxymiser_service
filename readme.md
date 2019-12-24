@@ -69,7 +69,8 @@ Primary limitations/concerns are:
 
 You'll need to deploy the Auth Service and then the Visitor Service (because the Visitor Service needs the IP/domain of the Auth Service).
 
-## 5.1 Set up Two Servers with the required services on each one
+## 5.1 Set up Two Servers with the required services on each one
+
 
 > This guide assumes you are deploying to Ubuntu 18.04 servers and you have opened up all the required ports (i.e. ports 80, 443 and 27017).
 
