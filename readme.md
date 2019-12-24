@@ -267,12 +267,15 @@ Now, let's simulate the DMP sending data to the service.
 
 
 **Endpoint**
+
 {VISITOR SERVICE PUBLIC IP}/receive_data/mm
 
 **Request Type**
+
 POST
 
 **Headers**
+
 ```Javascript
 {"Content-Type":"application/json"}
 ```
@@ -310,13 +313,15 @@ POST
 When you push data to the DMP > Maxymiser Service endpoint, it will then fire data to the Maxymiser API. For example:
 
 **Endpoint**
+
 https://api-data-eu.maxymiser.com/Xyz134/customer-profiles/12345
 
 **Request Type**
+
 PUT
 
-
 **Headers**
+
 ```Javascript
 {
   "content-length": "44",
@@ -328,6 +333,7 @@ PUT
 ```
 
 **Body**
+
 ```Javascript
 {
 "customer_type":"big_spender"
