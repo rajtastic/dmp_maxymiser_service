@@ -63,6 +63,7 @@ Primary limitations/concerns are:
 	* runs **reads and writes on the same container** - it does not run read-replicas or have any durabibilty/disaster recovery
 	* Ideally, this should:
 		* be run on a separate set of servers
+    * these would run in a private subnet (and only the Auth Service could talk to these on port 27017)
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
 
