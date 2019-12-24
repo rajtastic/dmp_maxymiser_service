@@ -87,7 +87,13 @@ sudo apt install nano
 ```
 
 ## 5.2 Install Auth Service
-On your Auth Service Server, you can now install the Auth Service:
+On your Auth Service Server, you can now install the Auth Service.
+
+Download the Docker Container/Service:
+```console
+sudo docker pull rajtastic/dmp_mm_auth_service
+
+```
 
 Download the docker-compose.yaml file:
 
@@ -109,11 +115,62 @@ Nano into your file and edit the config:
 
 ![docker-prod.env file](https://www.evernote.com/shard/s142/sh/c9f35e7d-0dcb-4b8c-b7bb-dadcb0478f7d/8903d48c9f61743e/res/cc74a2e0-2c22-401f-aa43-ff1dbccc513e/skitch.png)
 
-Change the endpoints as per the screenshot.
+Change the endpoints as per the screenshot:
 
 > Leave "DB_DOMAIN" as default
 
 > Change "LOG_SERVER_STATUS" and "LOG_ENDPOINT" as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
 
+Now, turn the Docker Service to get the Auth Service up and running:
 
+```console
+sudo docker-compose up -d
+```
 
+Finally, check your server IP/domain to see if the service is up and running. For example:
+
+<Your Server IP/Domain>/health
+
+![Auth Service Health Check](https://www.evernote.com/shard/s142/sh/679dce3a-0500-47e1-87be-f1ece695812b/ab77a26cd9dc69e9/res/feaf30a7-6bdf-4f57-8176-8105dee0b4d9/skitch.png)
+
+## 5.3 Install Visitor Service
+
+Download the Docker Container/Service:
+```console
+sudo docker pull rajtastic/dmp_mm_visitor_service
+
+```
+
+Download the docker-compose.yaml file:
+
+```console
+sudo curl https://raw.githubusercontent.com/rajtastic/dmp_maxymiser_service/master/dmp_mm_visitor_service/docker-compose.yaml --output docker-compose.yaml
+
+```
+
+Create an "env" folder and download the **docker-prod.env** file (you will configure your server using the docker env files here):
+
+```console
+sudo mkdir env
+cd env
+sudo curl https://raw.githubusercontent.com/rajtastic/dmp_maxymiser_service/master/dmp_mm_visitor_service/env/docker-prod.env --output docker-prod.env
+
+```
+
+Nano into your file and edit the config:
+
+![docker-prod.env](https://www.evernote.com/shard/s142/sh/5103d7f6-76d1-4376-9be3-ae5aa590f481/16aa362087688585/res/67a85fd7-2775-4535-a18e-aff8817adddf/skitch.png)
+
+Change the endpoints as per the screenshot above.
+
+Now, turn the Docker Service to get the Auth Service up and running:
+
+```console
+sudo docker-compose up -d
+```
+
+Finally, check your server IP/domain to see if the service is up and running. For example:
+
+<Your Server IP/Domain>/health
+
+![Visitor Service Health Check](https://www.evernote.com/shard/s142/sh/9669b6a0-2bfc-404a-9fb5-163e80cf3f3d/066fc566bbf4c6db/res/2e287414-e7dc-4314-8063-a5aee6021b69/skitch.png)
