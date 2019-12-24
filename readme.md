@@ -73,6 +73,7 @@ You'll need to deploy the Auth Service and then the Visitor Service (because the
 ## 5.1 Set up two Servers with Public IPs
 
 
+
 > This guide sets up servers using Ubuntu 18.04 images but feel free to use whatever you want
 
 Ensure you open ports 80 and 443:
