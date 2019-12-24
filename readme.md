@@ -346,4 +346,40 @@ PUT
 
 If you have logging set up, you can check these requests and the response from Maxymiser on your Logging Server. For example:
 
+> Failed Call
+
+```Javascript
+{
+  status: 'FAIL',
+  message: "Maxymiser Call has failed - see 'error'",
+  error: {
+    name: 'StatusCodeError',
+    statusCode: 403,
+    message: '403 - {"errors":[{"code":"403","message":"programmatic access to customer data disabled"}]}',
+    error: { errors: [Array] },
+    options: {
+      method: 'PUT',
+      uri: 'https://api-data-eu.maxymiser.com/api/v1/sites/MDAxNTk3/customer-profiles/RANDOM_MAXYMISER_CUSTOMER_ID',
+      json: true,
+      body: [Object],
+      headers: [Object],
+      simple: true,
+      resolveWithFullResponse: false,
+      transform2xxOnly: false
+    },
+    response: {
+      statusCode: 403,
+      body: [Object],
+      headers: [Object],
+      request: [Object]
+    }
+  },
+  site_id: 'MDAxNTk3',
+  token: 'uhkjasdkjasdh.eyJzdWIiOiJ2cHJpb25hQGdtYWlsLmNvbSIsImlhdCI6MTU3NzExMjU0OSwiaXNzIjoiTWF4eW1pc2VyIiwiZXhwIjoxNTc3MTE2MTQ5fQ.XsMKOjYLKLALsDXnfBfgagZ4-_mYQAIvyG44cIici3SDREVOTSWcteL62UJ0do9-54A-f8xZTPzG67U5YCSFS3YdMa4TGBksZGqMhkLGLIKC-3oZB4yAx-vHx1Ba15rck6294Kgvs_8QAAp_moMiXcPgQNy6DS6-mH0wS28uaGuOER9Xo3e9zhtaL2OwNaFKfu3nIaxjTVvrCO94AWUzHYaEcBQmunTGwcOauzLOTmljLq6xU_FXZMghuUWasXlFQNVfjMKgEK8fgaRZDWtiIAFKUjGTfjAmnn3nS8ZiY5xvDeslvrLSUjGed7UAHWjdX_zouXBlv8r5TX3Id7fzfw',
+  maxymiser_visitor_id: 'RANDOM_MAXYMISER_CUSTOMER_ID',
+  dmp_delivery_id: 'RANDOM_DMP_DELIVERY_ID',
+  serviceName: 'Visitor Service'
+}
+```
+
 
