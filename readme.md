@@ -59,7 +59,7 @@ Primary limitations/concerns are:
 * **Not set up https** (the service should be updated to run on https)
 * There is **no authentication in the service itself** - it stores credentials in the MongoDB as long as they are valid in Maxymiser (it checks). Once credentials are submitted, they cannot be returned via API though so provided the service runs on https - they are secure (the service should probably run its own authentication as well).
 * The **MongoDB**: 
-	* is **running on the same server** as the Auth Service (so cannot be scaled out - only up). 
+	* is **running on the same server** as the Auth Service (so cannot be scaled out - only up). It is running as a container in the Docker Service which is running on the same server (see [docker-compose.yaml](https://github.com/rajtastic/dmp_maxymiser_service/blob/master/dmp_mm_auth_service/docker-compose.yaml))
 	* runs **reads and writes on the same container** - it does not run read-replicas or have any durabibilty/disaster recovery
 	* Ideally, this should:
 		* be run on a separate set of servers
