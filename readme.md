@@ -256,3 +256,113 @@ Optionally, you can check the console or your logging server for issues.
 }
 ```
 
+## 6.2 Testing the Visitor Service
+
+Now, try sending a payload to imitate what the DMP will send to the DMP > Maxymiser service in production.
+
+> For a real customer, Oracle DMP Services would work with Maxymiser to post DMP data to this endpoint directly via the DMP. For testing, you can just make a POST request in the correct format
+
+
+> **Warning** This request will fail if you haven’t sent in valid Maxymiser Credentials in the first step
+
+
+**Endpoint**
+{VISITOR SERVICE PUBLIC IP}/receive_data/mm
+
+**Request Type**
+POST
+
+**Headers**
+Content-Type=application/json
+
+**Body (sample)**
+
+```Javascript
+{
+	"DeliveryTime": "Fri Nov 15 14:08:12 UTC 2019",
+	"DestinationId": 83111,
+	"PixelCount": 1,
+	"Pixels": [{
+		"BkUuid": "db8cv5g/9xeabX25",
+		"IP": "160.34.126.217",
+		"CampaignId": "ABC123456",
+		"Categories": [{
+			"Id": 1099808,
+			"Utc": 1573826548
+		}],
+		"PartnerUuid": "<ENTER RANDOM MAXYMISER CUSTOMER ID HERE>",
+		"PixelUrl": "http://tags.bluekai.com/site/83112?mmSiteId=<ENTER_YOUR_MAXYMISER_SITE_ID>&attributeName=<CHANGE_TO_A_NAME>&attributeValue=<CHANGE_TO_A_VALUE>",
+		"Referrer": "",
+		"TagUri": "/site/83110",
+		"SiteId": 83110,
+		"Timestamp": "Fri Nov 15 14:08:12 UTC 2019",
+		"UtcSeconds": 1573826892
+	}]
+}
+```
+> Replace any values surrounded by "<" ">" with random values ("mmSiteID="" must be the same site ID from your previous step to work)
+
+When you push data to the DMP > Maxymiser Service endpoint, it will then fire data to the Maxymiser API. 
+
+Example
+
+POST
+{YOUR VISITOR SERVICE IP}/receive_data/mm
+
+HEADERS
+{"content-type": "application/json"}
+
+BODY
+{
+	"DeliveryTime": "Fri Nov 15 14:08:12 UTC 2019",
+	"DestinationId": 83111,
+	"PixelCount": 1,
+	"Pixels": [{
+		"BkUuid": "db8cv5g/9xeabX25",
+		"IP": "160.34.126.217",
+		"CampaignId": "123456",
+		"Categories": [{
+			"Id": 1099808,
+			"Utc": 1573826548
+		}],
+		"PartnerUuid": "RANDOM_MAXYMISER_CUSTOMER_ID",
+		"PixelUrl": ""http://tags.bluekai.com/site/83112?mmSiteId=MDAxNTk3&attributeName=customer_type&attributeValue=big_spender",
+		"Referer": "",
+		"TagUri": "/site/83110?id=MYPARTNERID",
+		"SiteId": 83110,
+		"Timestamp": "Fri Nov 15 14:08:12 UTC 2019",
+		"UtcSeconds": 1573826892
+	}]
+}
+
+
+
+
+Resulting POST request
+The DMP > Maxymiser Service would make the following request to Maxymiser:
+
+PUT
+https://api-data-eu.maxymiser.com/MDAxNTk3/customer-profiles/RANDOM_MAXYMISER_CUSTOMER_ID
+
+HEADERS
+{
+  "content-length": "44",
+  "authorization": "Bearer SAMPLE_MAXYMISER_AUTHTOKEN",
+  "accept-encoding": "gzip",
+  "content-type": "application/json",
+  "accept": "application/json"
+}
+
+BODY
+{
+"customer_type":"big_spender"
+}
+
+Response
+{
+ "customerId": "RANDOM_MAXYMISER_CUSTOMER_ID",
+ "profile": {
+"customer_type":"big_spender"
+ }
+}
+
