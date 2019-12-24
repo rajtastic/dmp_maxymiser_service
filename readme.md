@@ -69,7 +69,7 @@ Primary limitations/concerns are:
 
 You'll need to deploy the Auth Service and then the Visitor Service (because the Visitor Service needs the IP/domain of the Auth Service).
 
-## 5.1 Set up two Servers with Public IPs
+## 5.1 Set up two servers with public IPs
 
 Ensure you open ports 80 and 443:
 
