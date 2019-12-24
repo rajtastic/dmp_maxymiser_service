@@ -1,7 +1,14 @@
 # Table of Contents
 
 [1 Introduction](#1-introduction)
+
 [2 Repo Contents Description](#2-repo-contents-description)
+
+[3 Logging](#3-logging)
+
+[4 Limitations/Concerns](#4-Limitations-/-Concerns)
+
+[5 Deployment Instructions](#5-Deployment-Instructions)
 
 # 1 Introduction 
 
