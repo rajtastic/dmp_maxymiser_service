@@ -102,7 +102,7 @@ Primary limitations/concerns are:
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
 
-### 4.3 Recommended Infrastructure for Production
+## 4.3 Recommended Infrastructure for Production
 
 The below architecture improves on the current architecture as follows:
 
