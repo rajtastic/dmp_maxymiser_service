@@ -108,17 +108,17 @@ Primary limitations/concerns are:
 
 The below architecture improves on the current architecture as follows:
 
-* *Durability* : It should withstand complete failure in a whole availability zone and fail over to the same infrastructure running in another availability zone
+* *Durability* : It should withstand complete failure in a whole availability zone and fail over to the same infrastructure running in another availability zone.
 
-* *Scalability* : The Docker Containers/Services should scale out automatically in auto-scaling groups of servers leveraging load balancers in front of each service
+* *Scalability* : The Docker Containers/Services should scale out automatically in auto-scaling groups of servers leveraging load balancers in front of each service.
 
-* *Security* : The entire service should be https only and appropriate Security Groups/Network Access Control Lists should be set up to minimum required access to each service only
+* *Security* : The entire service should be https only and appropriate firewalls (Security Groups/Network Access Control Lists etc) should be configured to allow only minimum required access to each service.
 
-* *Stateful Infrastructure should be private* : The database should be run on its own set of servers and be in a private subnet (only accessible by the Auth Service)
+* *Stateful Infrastructure should be private* : The database should be run on its own set of servers and be in a private subnet (only accessible by the Auth Service).
 
-* *Read vs Write Database* : The database should be split between read-replicas and write instances to reduce load on the DB for writes (and allow all reading to be made solely from the read-replicas)
+* *Read vs Write Database* : The database should be split between read-replicas and write instances to reduce load on the DB for writes (and allow all reading to be made solely from the read-replicas).
 
-* *Backup Database to fail-over infrastructure* : The write DB needs to both replicated to read-replicas in the same availability zone and a completely separate DB in another availability zone for disaster recovery/fail over
+* *Backup Database to fail-over infrastructure* : The write DB needs to both replicated to read-replicas in the same availability zone and a completely separate DB in another availability zone for disaster recovery/fail over.
 
 * *Logging Containers* : New 'Logging' containers per service should be set up to allow server logs to be fired off to a server logging service (to reduce load on the primary containers which are performing workflow). 
 
