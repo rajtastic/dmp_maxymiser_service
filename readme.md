@@ -122,7 +122,7 @@ The below architecture improves on the current architecture as follows:
 
 *Recommended Production Architecture*
 
-![recommended_production_architecture](https://www.evernote.com/shard/s142/sh/a56581f3-485a-4dd0-9f01-7b803d8022f7/daaf58e948909927/res/47455522-3cbf-4d67-bf8c-3f1d8a56c7d1/skitch.png)
+![recommended_production_architecture](https://www.evernote.com/shard/s142/sh/3d9cd8c4-5e24-4461-b1f2-1e44ffa19dc1/986b4b6994389373/res/21d02898-56de-4e01-9f0a-0b080e78bd56/skitch.png)
 
 
 # 5 Deployment Instructions
