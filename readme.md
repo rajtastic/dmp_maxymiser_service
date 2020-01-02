@@ -135,11 +135,11 @@ The below architecture improves on the current architecture as follows:
 
 In order for this to work, you'll need:
 
+* 2 x **Servers with Public IPs** to run the docker services on
+
 * A **Maxymiser App** built in production which will accept data via the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html).
 
 > If you don't have an app, don't worry - you could just use a test URL for you to receive requests on (e.g. generate one on beeceptor.com)
-
-* 2 x **Servers with Public IPs** to run the docker services on
 
 * (Optional) **Logging Server** endpoint to send server logs to (must accept POST requests). For example, you could use AWS API Gateway to send your logs to
 
