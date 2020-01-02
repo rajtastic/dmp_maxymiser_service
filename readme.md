@@ -222,10 +222,10 @@ Change the endpoints as per the screenshot:
 
 > Leave **DB_DOMAIN** as default
 
-> Change **MM_AUTH_ENDPOINT** to your Maxymiser token endpoint (e.g. https://api-auth-env.maxymiser.com/oauth2/v1/tokens). See [5.6.1 Mock Endpoint for the Auth Service](#561-Mock-Endpoint-for-the-Auth-Service) if you want to fake this.
+> Change **MM_AUTH_ENDPOINT** to your Maxymiser token endpoint (e.g. https://api-auth-env.maxymiser.com/oauth2/v1/tokens) (see [5.6.1 Mock Endpoint for the Auth Service](#561-Mock-Endpoint-for-the-Auth-Service) if you want to fake this).
 
 
-> Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+> Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing (see [5.6.3 Mock Endpoint for receiving Logging](#563-Mock-Endpoint-for-receiving-Logging) if you want to fake this).
 
 Now, turn the Docker Service to get the Auth Service up and running:
 
@@ -270,9 +270,9 @@ Nano into your file and edit the config:
 
 > Change **AUTH_SERVICE_DOMAIN** to your Auth Service URL, e.g. https://myauth.com>
 
-> Change **MM_VISITOR_API** to your Maxymiser Customer Data API domain, e.g. https://api-data-eu.maxymiser.com. See [5.6.2 Mock Endpoint for the Visitor Service](#562-Mock-Endpoint-for-the-Visitor-Service) if you want to fake this.
+> Change **MM_VISITOR_API** to your Maxymiser Customer Data API domain, e.g. https://api-data-eu.maxymiser.com (see [5.6.2 Mock Endpoint for the Visitor Service](#562-Mock-Endpoint-for-the-Visitor-Service) if you want to fake this).
 
-> Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
+> Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing (see [5.6.3 Mock Endpoint for receiving Logging](#563-Mock-Endpoint-for-receiving-Logging) if you want to fake this).
 
 
 Now, turn the Docker Service to get the Auth Service up and running:
