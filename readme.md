@@ -53,15 +53,15 @@ Both services can be specified to log requests/results to your own server (provi
 }
 ```
 
-# 5 Architecture
+# 4 Architecture
 
 The architecture description is split into the following areas:
 
-5.1 - Logical Architecture
-5.2 - Technical Architecture
-5.3 - Limitations / Recommended Changes for Production
+4.1 - Logical Architecture
+4.2 - Technical Architecture
+4.3 - Limitations / Recommended Changes for Production
 
-## 5.1 Logical Architecture
+## 4.1 Logical Architecture
 
 ![logical_archicture](https://www.evernote.com/shard/s142/sh/cb3bb327-4e49-4088-bc2e-44e9246aac64/360660033dfae8d2/res/8196e770-9fa2-44e2-8b46-07f51604c75d/skitch.png)
 
@@ -81,10 +81,10 @@ The architecture description is split into the following areas:
 
 Please note that all successes/failures will be appropriately logged your Error Logging Server (see [3 Logging](#3-logging) for details) if you have configured your Docker Containers (via docker-prod.env) to turn on logging.
 
-## 5.2 Technical Architecture
+## 4.2 Technical Architecture
 
 
-## 5.3 Limitations / Recommended Changes for Production
+## 4.3 Limitations / Recommended Changes for Production
 Primary limitations/concerns are:
 
 * **Not set up https** (the service should be updated to run on https)
