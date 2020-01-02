@@ -101,6 +101,7 @@ Primary limitations/concerns are:
     * these would run in a private subnet (and only the Auth Service could talk to these on port 27017)
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
+* **Logging** is currently fired from the Auth Service & Visitor Service containers. They should run in separate *Logging* containers within the Docker Service the Auth Service/Visitor Service Docker Services (this will reduce load on the main Auth/Visitor Services)
 
 ## 4.3 Recommended Infrastructure for Production
 
