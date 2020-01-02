@@ -62,9 +62,9 @@ The architecture description is split into the following areas:
 
 [4.1 - Current Architecture](#41-Current-Architecture)
 
-[4.2 - Limitations](##42-Limitations)
+[4.2 - Limitations](#42-Limitations)
 
-[4.3 - Recommended Infrastructure for Production](##43-Recommended-Infrastructure-for-Production)
+[4.3 - Recommended Infrastructure for Production](#43-Recommended-Infrastructure-for-Production)
 
 
 ## 4.1 Current Architecture
