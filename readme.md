@@ -62,7 +62,9 @@ The architecture description is split into the following areas:
 
 [4.1 - Current Architecture](#41-Current-Architecture)
 
-[4.2 - Limitations / Recommended Changes for Production](##42-Limitations-/-Recommended-Production-Architecture)
+[4.2 - Limitations](##42-Limitations)
+
+[4.3 - Recommended Infrastructure for Production](##43-Recommended-Infrastructure-for-Production)
 
 
 ## 4.1 Current Architecture
@@ -85,9 +87,7 @@ The architecture description is split into the following areas:
 
 Please note that all successes/failures will be appropriately logged your Error Logging Server (see [3 Logging](#3-logging) for details) if you have configured your Docker Containers (via docker-prod.env) to turn on logging.
 
-## 4.2 Limitations / Recommended Production Architecture
-
-### 4.2.1 Limitations
+## 4.2 Limitations
 
 Primary limitations/concerns are:
 
@@ -102,7 +102,7 @@ Primary limitations/concerns are:
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
 
-### 4.2.2 Recommended Production Architecture
+### 4.3 Recommended Infrastructure for Production
 
 The below architecture improves on the current architecture as follows:
 
