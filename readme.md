@@ -103,7 +103,7 @@ Primary limitations/concerns are:
     * these would run in a private subnet (and only the Auth Service could talk to these on port 27017)
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
-    
+
 * **Logging** is currently fired from the Auth Service & Visitor Service containers. They should run in separate *Logging* containers within the Docker Service the Auth Service/Visitor Service Docker Services (this will reduce load on the main Auth/Visitor Services)
 
 ## 4.3 Recommended Infrastructure for Production
@@ -131,9 +131,22 @@ The below architecture improves on the current architecture as follows:
 
 # 5 Deployment Instructions
 
-You'll need to deploy the Auth Service and then the Visitor Service (because the Visitor Service needs the IP/domain of the Auth Service).
+## 5.1 Prerequisites
 
-## 5.1 Set up two servers with public IPs
+In order for this to work, you'll need:
+
+* A **Maxymiser App** built in production which will accept data via the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html).
+
+> If you don't have an app, don't worry - you could just use a test URL for you to receive requests on (e.g. generate one on beeceptor.com)
+
+* 2 x **Servers with Public IPs** to run the docker services on
+
+* (Optional) **Logging Server** endpoint to send server logs to (must accept POST requests). For example, you could use AWS API Gateway to send your logs to
+
+> If you don't have a server, don't worry - you could just use a test URL for you to receive requests on (e.g. generate one on beeceptor.com)
+
+
+## 5.2 Set up two servers with public IPs
 
 > This guide sets up servers using Ubuntu 18.04 images but feel free to use whatever you want
 
@@ -150,7 +163,7 @@ sudo netfilter-persistent save
 ```
 
 
-## 5.2 Set up the required services on each server
+## 5.3 Set up the required services on each server
 
 Firstly, set up two servers and set up the following services on each.
 
@@ -178,7 +191,7 @@ sudo apt install nano
 
 ```
 
-## 5.3 Install Auth Service
+## 5.4 Install Auth Service
 On your Auth Service Server, you can now install the Auth Service.
 
 Download the Docker Container/Service:
@@ -227,7 +240,7 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 
 ![Auth Service Health Check](https://www.evernote.com/shard/s142/sh/679dce3a-0500-47e1-87be-f1ece695812b/ab77a26cd9dc69e9/res/feaf30a7-6bdf-4f57-8176-8105dee0b4d9/skitch.png)
 
-## 5.4 Install Visitor Service
+## 5.5 Install Visitor Service
 Go to your Visitor Service server and begin installing the Visitor Service:
 
 Download the Docker Container/Service:
