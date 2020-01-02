@@ -58,8 +58,11 @@ Both services can be specified to log requests/results to your own server (provi
 The architecture description is split into the following areas:
 
 4.1 - Logical Architecture
+
 4.2 - Technical Architecture
+
 4.3 - Limitations / Recommended Changes for Production
+
 
 ## 4.1 Logical Architecture
 
