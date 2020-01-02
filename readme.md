@@ -88,6 +88,9 @@ Please note that all successes/failures will be appropriately logged your Error 
 
 
 ## 4.3 Limitations / Recommended Changes for Production
+
+### 4.3.1 Limitations
+
 Primary limitations/concerns are:
 
 * **Not set up https** (the service should be updated to run on https)
@@ -100,6 +103,27 @@ Primary limitations/concerns are:
     * these would run in a private subnet (and only the Auth Service could talk to these on port 27017)
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
+
+### 4.3.2 Recommended Production Architecture
+
+The below architecture improves on the current architecture as follows:
+
+* *Durability* : It should withstand complete failure in a whole availability zone and fail over to the same infrastructure running in another availability zone
+
+* *Scalability* : The Docker Containers/Services should scale out automatically in auto-scaling groups of servers leveraging load balancers in front of each service
+
+* *Security* : The entire service should be https only and appropriate Security Groups/Network Access Control Lists should be set up to minimum required access to each service only
+
+* *Stateful Infrastructure should be private* : The database should be run on its own set of servers and be in a private subnet (only accessible by the Auth Service)
+
+* *Read vs Write Database* : The database should be split between read-replicas and write instances to reduce load on the DB for writes (and allow all reading to be made solely from the read-replicas)
+
+* *Backup Database to fail-over infrastructure* : The write DB needs to both replicated to read-replicas in the same availability zone and a completely separate DB in another availability zone for disaster recovery/fail over
+
+* *Logging Containers* : New 'Logging' containers per service should be set up to allow server logs to be fired off to a server logging service (to reduce load on the primary containers which are performing workflow). 
+
+
+
 
 # 5 Deployment Instructions
 
