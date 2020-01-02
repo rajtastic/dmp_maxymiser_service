@@ -135,15 +135,15 @@ The below architecture improves on the current architecture as follows:
 
 In order for this to work, you'll need:
 
-* 2 x **Servers with Public IPs** to run the docker services on
+1. 2 x **Servers with Public IPs** to run the docker services on
 
-* A **Maxymiser App** built in production which will accept data via the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html).
+2. A **Maxymiser App** built in production which will accept data via the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html).
 
-> If you don't have an app, don't worry - you could just use a test URL for you to receive requests on (e.g. generate one on beeceptor.com)
+3. (Optional) **Logging Server** endpoint to send server logs to (must accept POST requests). For example, you could use AWS API Gateway to send your logs to
 
-* (Optional) **Logging Server** endpoint to send server logs to (must accept POST requests). For example, you could use AWS API Gateway to send your logs to
+> If you don't have an app for (2), don't worry - you could configure a test URL for you to work with (e.g. generate one on beeceptor.com). Suggestions provided in the deployment instructions below.
 
-> If you don't have a server, don't worry - you could just use a test URL for you to receive requests on (e.g. generate one on beeceptor.com)
+> If you don't have a endpoint capable of receiving POST requests for the server logging, you can always point them at a temporary endpoint (e.g. create one on beeceptor.com).
 
 
 ## 5.2 Set up two servers with public IPs
