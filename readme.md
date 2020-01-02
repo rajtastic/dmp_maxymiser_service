@@ -71,19 +71,19 @@ The architecture description is split into the following areas:
 
 ![logical_archicture](https://www.evernote.com/shard/s142/sh/ed352628-030d-48b6-9c3f-e34dc3a35f96/9056e6c1d897a037/res/a9efb95c-4e1f-4c4f-b59b-520e945f9cb4/skitch.png)
 
-*Auth Service Flow*
+**Auth Service Flow**
 
 * Firstly, the Maxymiser end-user must open the Auth Service Page ([MYAUTHSERVICE]/auth) and enter in their Maxymiser Credentials (see [6.1 Testing The Auth Service](#61-Testing-the-Auth-Service) for more details).
 * The Auth Service will then call Maxymiser to check if they are valid and then store them in Maxymiser if valid (credentials can also be deleted from the Auth Service in the same way)
 * These Maxymiser Credentials will then be used by the Visitor Service when the DMP sends data over (which needs to be forwarded on to Maxymiser)
 
-*Visitor Service Flow*
+**Visitor Service Flow**
 
 * The DMP needs to be configured to pass data (via an app using DMP Server Data Transfer) through to the Visitor Service so that POST requests can be parsed by the service (and then sent over to the correct Site ID in Maxymiser). Please see [6.2 Testing The Visitor Service](#62-Testing-the-Visitor-Service) for more details).
 * The Visitor Service will call the Auth Service to check if there are valid credentials/an active token for that Maxymiser Container (it will grab a new auth token if it has expired)
 * It will then forward the DMP data to the appropriate SiteID via the [Maxymiser Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html)
 
-*Logging*
+**Logging**
 
 Please note that all successes/failures will be appropriately logged your Error Logging Server (see [3 Logging](#3-logging) for details) if you have configured your Docker Containers (via docker-prod.env) to turn on logging.
 
