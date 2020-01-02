@@ -6,7 +6,7 @@
 
 [3 Logging](#3-logging)
 
-[4 Limitations/Concerns](#4-Limitations-/-Concerns)
+[4 Architecture](#4-Architecture)
 
 [5 Deployment Instructions](#5-Deployment-Instructions)
 
@@ -53,7 +53,38 @@ Both services can be specified to log requests/results to your own server (provi
 }
 ```
 
-# 4 Limitations / Concerns
+# 5 Architecture
+
+The architecture description is split into the following areas:
+
+5.1 - Logical Architecture
+5.2 - Technical Architecture
+5.3 - Limitations / Recommended Changes for Production
+
+## 5.1 Logical Architecture
+
+![logical_archicture](https://www.evernote.com/shard/s142/sh/cb3bb327-4e49-4088-bc2e-44e9246aac64/360660033dfae8d2/res/8196e770-9fa2-44e2-8b46-07f51604c75d/skitch.png)
+
+*Auth Service Flow*
+
+* Firstly, the Maxymiser end-user must open the Auth Service Page ([MYAUTHSERVICE]/auth) and enter in their Maxymiser Credentials (see [6.1 Testing The Auth Service](#6.1-Testing-the-Auth-Service) for more details).
+* The Auth Service will then call Maxymiser to check if they are valid and then store them in Maxymiser if valid (credentials can also be deleted from the Auth Service in the same way)
+* These Maxymiser Credentials will the be used by the Visitor Service when the DMP sends data over (which needs to be forwarded on to Maxymiser)
+
+*Visitor Service Flow*
+
+* The DMP needs to be configured to pass data (via an app using DMP Server Data Transfer) through to the Visitor Service so that POST requests can be parsed by the service (and then sent over to the correct Site ID in Maxymiser). Please see [6.2 Testing The Visitor Service](#6.2-Testing-the-Visitor-Service) for more details).
+* The Visitor Service will call the Auth Service to check if there are valid credentials/an active token for that Maxymiser Container (it will grab a new auth token if it has expired)
+* It will then forward the DMP data to the appropriate SiteID via the [Maxymiser Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html)
+
+*Logging*
+
+Please note that all successes/failures will be appropriately logged your Error Logging Server (see [3 Logging](#3-logging) for details) if you have configured your Docker Containers (via docker-prod.env) to turn on logging.
+
+## 5.2 Technical Architecture
+
+
+## 5.3 Limitations / Recommended Changes for Production
 Primary limitations/concerns are:
 
 * **Not set up https** (the service should be updated to run on https)
