@@ -118,7 +118,7 @@ The below architecture improves on the current architecture as follows:
 * **Logging Containers** : New 'Logging' containers per service should be set up to allow server logs to be fired off to a server logging service (to reduce load on the primary containers which are performing workflow). 
 
 *Recommended Production Architecture*
-![recommended_production_architecture](https://www.evernote.com/shard/s142/sh/ef41f7c6-fd72-42c5-8a08-4601217910fb/a2e977054e2d8d21/res/a055073a-de23-4ee2-a505-c6386ef83098/skitch.png)
+![recommended_production_architecture](https://www.evernote.com/shard/s142/sh/a56581f3-485a-4dd0-9f01-7b803d8022f7/daaf58e948909927/res/47455522-3cbf-4d67-bf8c-3f1d8a56c7d1/skitch.png)
 
 
 # 5 Deployment Instructions
