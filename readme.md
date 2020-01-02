@@ -57,16 +57,14 @@ Both services can be specified to log requests/results to your own server (provi
 
 The architecture description is split into the following areas:
 
-[4.1 - Logical Architecture](#41-Logical-Architecture)
+[4.1 - Current Architecture](#41-Current-Architecture)
 
-[4.2 - Technical Architecture](#42-Technical-Architecture)
-
-[4.3 - Limitations / Recommended Changes for Production](##43-Limitations-/-Recommended-Changes-for-Production)
+[4.2 - Limitations / Recommended Changes for Production](##42-Limitations-/-Recommended-Production-Architecture)
 
 
-## 4.1 Logical Architecture
+## 4.1 Current Architecture
 
-![logical_archicture](https://www.evernote.com/shard/s142/sh/cb3bb327-4e49-4088-bc2e-44e9246aac64/360660033dfae8d2/res/8196e770-9fa2-44e2-8b46-07f51604c75d/skitch.png)
+![logical_archicture](https://www.evernote.com/shard/s142/sh/aeffb948-a074-4bf8-9765-2530d84bf91b/3bc539f76aa55f38/res/e36687b7-136f-450e-86fe-050f8c78530e/skitch.png)
 
 *Auth Service Flow*
 
@@ -84,12 +82,9 @@ The architecture description is split into the following areas:
 
 Please note that all successes/failures will be appropriately logged your Error Logging Server (see [3 Logging](#3-logging) for details) if you have configured your Docker Containers (via docker-prod.env) to turn on logging.
 
-## 4.2 Technical Architecture
+## 4.2 Limitations / Recommended Production Architecture
 
-
-## 4.3 Limitations / Recommended Changes for Production
-
-### 4.3.1 Limitations
+### 4.2.1 Limitations
 
 Primary limitations/concerns are:
 
@@ -104,7 +99,7 @@ Primary limitations/concerns are:
 		* split reads to read-replicas (and only write to the main DB when needed)
 		* Have some form of disaster recovery/fail-over
 
-### 4.3.2 Recommended Production Architecture
+### 4.2.2 Recommended Production Architecture
 
 The below architecture improves on the current architecture as follows:
 
