@@ -64,7 +64,7 @@ The architecture description is split into the following areas:
 
 ## 4.1 Current Architecture
 
-![logical_archicture](https://www.evernote.com/shard/s142/sh/aeffb948-a074-4bf8-9765-2530d84bf91b/3bc539f76aa55f38/res/e36687b7-136f-450e-86fe-050f8c78530e/skitch.png)
+![logical_archicture](https://www.evernote.com/shard/s142/sh/ed352628-030d-48b6-9c3f-e34dc3a35f96/9056e6c1d897a037/res/a9efb95c-4e1f-4c4f-b59b-520e945f9cb4/skitch.png)
 
 *Auth Service Flow*
 
@@ -118,6 +118,7 @@ The below architecture improves on the current architecture as follows:
 * **Logging Containers** : New 'Logging' containers per service should be set up to allow server logs to be fired off to a server logging service (to reduce load on the primary containers which are performing workflow). 
 
 *Recommended Production Architecture*
+
 ![recommended_production_architecture](https://www.evernote.com/shard/s142/sh/a56581f3-485a-4dd0-9f01-7b803d8022f7/daaf58e948909927/res/47455522-3cbf-4d67-bf8c-3f1d8a56c7d1/skitch.png)
 
 
