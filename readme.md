@@ -224,7 +224,8 @@ Change the endpoints as per the screenshot:
 
 > Leave **DB_DOMAIN** as default
 
-> Change **MM_AUTH_ENDPOINT** to your Maxymiser token enpdoint (e.g. https://api-auth-env.maxymiser.com/oauth2/v1/tokens)
+> Change **MM_AUTH_ENDPOINT** to your Maxymiser token endpoint (e.g. https://api-auth-env.maxymiser.com/oauth2/v1/tokens). See [5.6.1 Mock Endpoint for the Auth Service](#561-Mock-Endpoint-for-the-Auth-Service) if you want to fake this.
+
 
 > Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
 
@@ -271,7 +272,7 @@ Nano into your file and edit the config:
 
 > Change **AUTH_SERVICE_DOMAIN** to your Auth Service URL, e.g. https://myauth.com>
 
-> Change **MM_VISITOR_API** to your Maxymiser Customer Data API domain, e.g. https://api-data-eu.maxymiser.com
+> Change **MM_VISITOR_API** to your Maxymiser Customer Data API domain, e.g. https://api-data-eu.maxymiser.com. See [5.6.2 Mock Endpoint for the Visitor Service](#562-Mock-Endpoint-for-the-Visitor-Service) if you want to fake this.
 
 > Change **LOG_SERVER_STATUS** and **LOG_ENDPOINT** as per above if you have an endpoint to send logging requests to then you can keep an eye on what the server is doing - useful for testing
 
@@ -287,6 +288,50 @@ Finally, check your server IP/domain to see if the service is up and running. Fo
 <Your Server IP/Domain>/health
 
 ![Visitor Service Health Check](https://www.evernote.com/shard/s142/sh/9669b6a0-2bfc-404a-9fb5-163e80cf3f3d/066fc566bbf4c6db/res/2e287414-e7dc-4314-8063-a5aee6021b69/skitch.png)
+
+## 5.6 (optional) Using your own endpoints for testing
+
+If you don't have a Maxymiser app, you can create your own endpoints on [beeceptor.com](https://beeceptor.com/) which you can post data to (and they will return an appropriate response). See below:
+
+### 5.6.1 Mock Endpoint for the Auth Service
+Create an endpoint on [beeceptor.com](https://beeceptor.com/) which will return the following response:
+
+```Javascript
+{
+  "expires_in":3600,
+  "token_type":"Bearer",
+  "access_token":"FAKE_MM_TOKEN_FROM_BEECEPTOR"
+}
+```
+Enter the following URL as your "MM_AUTH_ENDPOINT" in the *docker-prod.env*:
+
+```console
+MM_AUTH_ENDPOINT=https://CHANGETOYOURAUTHENDPOINT.free.beeceptor.com
+```
+
+### 5.6.2 Mock Endpoint for the Visitor Service
+Create an endpoint on [beeceptor.com](https://beeceptor.com/) which will return the following response:
+
+```Javascript
+{
+    "customerId":"HARD-CODED_VISITOR_ID_BEECEPTOR",
+    "profile":{
+        "hardCodedAttributeNameBeeceptor":"hardCodedAttributeValueBeeceptor"        
+    }
+}
+```
+Enter the following URL as your "MM_VISITOR_API" in the *docker-prod.env*:
+
+```console
+MM_VISITOR_API=https://CHANGETOYOURVISITORENDPOINT.free.beeceptor.com
+```
+
+### 5.6.3 Mock Endpoint for receiving Logging
+Create any endpoint on [beeceptor.com](https://beeceptor.com/) and set your *LOG_ENDPOINT* to this URL in the *docker-prod.env*:. For example:
+
+```console
+LOG_ENDPOINT=https://CHANGETOYOURLOGGINGENDPOINT.free.beeceptor.com
+```
 
 # 6 Testing
 
