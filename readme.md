@@ -18,7 +18,10 @@ This repo contains two [Docker](http://www.docker.com) Images (both using [NodeJ
 
 Optimising returning visitors' landing pages are a key opportunity for conversion. This means the existing client-side DMP > Maxymiser integration is sub-optimal because it will either slow loading time for the first page view or delay optimisation for subsequent page views.
 
-As this integration would be server-side, as long as there is a match key between the DMP & Maxymiser (i.e. returning visitors only), by the time a user returns to the website Maxymiser will already have received the DMP data (making the landing page ready for optimsation).
+This solution provides a middleware app which can be deployed on your infrastructure (e.g. Oracle Cloud Infrastructure) to allow the DMP to send data to Maxymiser server-side. As long as there is a match key between the DMP & Maxymiser (e.g. customer ID or cookie ID), data can be sent from the DMP before the user lands on the page making the landing page ready for immediate optimisation).
+
+Please note, this solution will only provide substantial benefit for returning customers (especially if offline data is sent to the DMP without the customer revisiting the page). For example, if a customer hits 30 days before their car insurance renewal - this data may be sent to the DMP and we may want this information to be immediately sent to Maxymiser so that on their next website visit the landing page is immediately optimised.
+
 
 # 2 Repo Contents Description
 This repo contains two services which both run on Docker:
@@ -70,7 +73,7 @@ The architecture description is split into the following areas:
 
 * Firstly, the Maxymiser end-user must open the Auth Service Page ([MYAUTHSERVICE]/auth) and enter in their Maxymiser Credentials (see [6.1 Testing The Auth Service](#61-Testing-the-Auth-Service) for more details).
 * The Auth Service will then call Maxymiser to check if they are valid and then store them in Maxymiser if valid (credentials can also be deleted from the Auth Service in the same way)
-* These Maxymiser Credentials will the be used by the Visitor Service when the DMP sends data over (which needs to be forwarded on to Maxymiser)
+* These Maxymiser Credentials will then be used by the Visitor Service when the DMP sends data over (which needs to be forwarded on to Maxymiser)
 
 *Visitor Service Flow*
 
