@@ -141,9 +141,9 @@ In order for this to work, you'll need:
 
 3. (Optional) **Logging Server\**** endpoint to send server logs to (must accept POST requests). For example, you could use AWS API Gateway to send your logs to
 
-> \*If you don't have an app, don't worry - you could configure a test URL for you to work with (e.g. generate one on beeceptor.com). Suggestions provided in the deployment instructions below.
+> \*If you don't have an app, don't worry - you could configure a test URL for you to work with (e.g. generate one on [beeceptor.com](https://beeceptor.com/)). Suggestions provided in the deployment instructions below.
 
-> \*\*If you don't have a endpoint capable of receiving POST requests for the server logging, you can always point them at a temporary endpoint (e.g. create one on beeceptor.com).
+> \*\*If you don't have a endpoint capable of receiving POST requests for the server logging, you can always point them at a temporary endpoint (e.g. create one on [beeceptor.com](https://beeceptor.com/)).
 
 
 ## 5.2 Set up two servers with public IPs
