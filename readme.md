@@ -135,7 +135,7 @@ The below architecture improves on the current architecture as follows:
 
 In order for this to work, you'll need:
 
-1. 2 x **Servers with Public IPs** to run the docker services on
+1. **Two Servers with Public IPs** to run the docker services on
 
 2. A **Maxymiser App\*** built in production which will accept data via the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html).
 
