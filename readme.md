@@ -1,6 +1,6 @@
 # Table of Contents
 
-[1 Introduction](#1-introduction)
+[1 Overview](#1-Overview)
 
 [2 Repo Contents Description](#2-repo-contents-description)
 
@@ -12,7 +12,9 @@
 
 [6 Testing](#6-Testing)
 
-# 1 Introduction 
+# 1 Overview
+
+## 1.1 Introduction
 
 This repo contains two [Docker](http://www.docker.com) Images (both using [NodeJS](https://nodejs.org/en/) and [ExpressJS](https://expressjs.com/)) and required config files for the Oracle DMP > Maxymiser Service Proof-Of-Concept. This is a service designed to receive data from the Oracle DMP (via real-time [Server Data Transfer](https://docs.oracle.com/en/cloud/saas/data-cloud/data-cloud-help-center/#IntegratingBlueKaiPlatform/DataDelivery/intro_to_sdt.html)) and forward it to the Maxymiser [Customer Data API](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCGD/Overview.html) as end-user controlled Custom Attributes.
 
@@ -22,6 +24,11 @@ This solution provides a middleware app which can be deployed on your infrastruc
 
 Please note, this solution will only provide substantial benefit for returning customers (especially if offline data is sent to the DMP without the customer revisiting the page). For example, if a customer hits 30 days before their car insurance renewal - this data may be sent to the DMP and we may want this information to be immediately sent to Maxymiser so that on their next website visit the landing page is immediately optimised.
 
+## 1.2 Demo Video
+
+This video shows the app in action with Maxymiser:
+
+[![Demo](http://img.youtube.com/vi/iZ9UfjUY1gk/0.jpg)](http://www.youtube.com/watch?v=iZ9UfjUY1gk "Demo Video")
 
 # 2 Repo Contents Description
 This repo contains two services which both run on Docker:
